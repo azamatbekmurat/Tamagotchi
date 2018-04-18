@@ -1,18 +1,19 @@
 <h1>My Tamagotchies</h1>
-
+<ul>
   @foreach(var tamagotchi in Model)
   {
 
-    <p>@tamagotchi.GetName()</p>
+    <li>@tamagotchi.GetName()</li>
     if (@tamagotchi.GetHungry() > 0 && @tamagotchi.GetSleep() > 0 && @tamagotchi.GetHappy() > 0)
     {
-    <p>@tamagotchi.GetHungry() <a href='/feed/@tamagotchi.GetId()'>feed me</a></p>
-    <p>@tamagotchi.GetSleep() <a href='/sleep/@tamagotchi.GetId()'>put me to sleep</a></p>
-    <p>@tamagotchi.GetHappy() <a href='/happy/@tamagotchi.GetId()'>make me happy</a></p>
+    <li>@tamagotchi.GetHungry() <a href='/feed/@tamagotchi.GetId()'>feed me</a></li>
+    <li>@tamagotchi.GetSleep() <a href='/sleep/@tamagotchi.GetId()'>put me to sleep</a></li>
+    <li>@tamagotchi.GetHappy() <a href='/happy/@tamagotchi.GetId()'>make me happy</a></li>
     } else{
-    <p>he is dead</p>
+    <li>he is dead</li>
     }
   }
+</ul>
 
 <p><a href="/tamagotchies/new">Add a new tamagotchi.</a></p>
 
